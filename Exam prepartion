@@ -1,0 +1,370 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPtio4NhfF21IVodnccwP1o",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Kunjpatelcurtin/ISYS5002-2023-Semester1/blob/main/Exam%20prepartion\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "PAINT JOB:-"
+      ],
+      "metadata": {
+        "id": "Jok2wb6gAjaZ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "date = input(\"Please enter the date: \")\n",
+        "distance_miles = float(input(\"Please enter distance in miles: \"))\n",
+        "time_mins = float(input(\"Please enter time in minutes: \"))\n",
+        "\n",
+        "distance_km  = distance_miles * 1.60934\n",
+        "speed = distance_km/(time_mins/60)\n",
+        "  \n",
+        "print(f\"\\nDistance in miles: {distance_miles} and Time in minuites is {time_mins}\") \n",
+        "print(f\"\\nDistance in km: {distance_km}km \\nSpeed is {speed}km/hr\") \n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oM4SvC83Ab7o",
+        "outputId": "60df38de-7db2-4645-9d7e-cb5bb225e1fd"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Please enter the date: 150\n",
+            "Please enter distance in miles: 326\n",
+            "Please enter time in minutes: 664\n",
+            "\n",
+            "Distance in miles: 326.0 and Time in minuites is 664.0\n",
+            "\n",
+            "Distance in km: 524.64484km \n",
+            "Speed is 47.40766626506024km/hr\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ERROR SOLVING:- "
+      ],
+      "metadata": {
+        "id": "M5ZC-vs7AobD"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "try: \n",
+        "  date = input(\"Please enter the date: \")\n",
+        "except:\n",
+        "  print(\"Please enter date in format dd/mm/yyyy\")\n",
+        "\n",
+        "try:\n",
+        "  distance_miles = float(input(\"Please enter distance in miles: \"))\n",
+        "except: \n",
+        "  print(\"Invalide input. Please enter a numeric value for distance\")\n",
+        "\n",
+        "try:\n",
+        "  time_mins = float(input(\"Please enter time in minutes: \"))\n",
+        "except:\n",
+        "  print(\"Invalide input. Please enter a numeric value for time\")\n",
+        "\n",
+        "\n",
+        "distance_km  = distance_miles * 1.60934\n",
+        "speed = distance_km/(time_mins/60)\n",
+        "  \n",
+        "print(f\"\\nDistance in miles: {distance_miles} and Time in minuites is {time_mins}\") \n",
+        "print(f\"\\nDistance in km: {distance_km}km \\nSpeed is {speed}km/hr\") \n",
+        "     "
+      ],
+      "metadata": {
+        "id": "Bi6aqe2YArAf"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import datetime\n",
+        "\n",
+        "while True:\n",
+        "    date_str = input(\"Please enter the date in dd-mm-yyyy format: \")\n",
+        "\n",
+        "    try:\n",
+        "        '''\n",
+        "        Validates user input for a date in the format 'dd-mm-yyyy'.\n",
+        "        Returns True if input is valid, False otherwise.\n",
+        "        '''\n",
+        "        date = datetime.datetime.strptime(date_str, '%d-%m-%Y').date()\n",
+        "        print(f\"Valid date: {date}\")\n",
+        "        break\n",
+        "    except ValueError:\n",
+        "        print(\"Invalid date format. Please enter date in dd-mm-yyyy format.\")\n",
+        "\n",
+        "while True:\n",
+        "    try:\n",
+        "        distance_miles = float(input(\"Please enter distance in miles: \"))\n",
+        "        break\n",
+        "    except ValueError: \n",
+        "        print(\"Invalid input. Please enter a numeric value for distance\")\n",
+        "\n",
+        "while True:\n",
+        "    try:\n",
+        "        time_mins = float(input(\"Please enter time in minutes: \"))\n",
+        "        # Check that time is greater than 0\n",
+        "        if time_mins <= 0:\n",
+        "            raise ValueError(\"Time should be greater than 0\")\n",
+        "        break\n",
+        "    except ValueError:\n",
+        "        print(\"Invalid time format, please enter time in minutes\")\n",
+        "\n",
+        "distance_km  = distance_miles * 1.60934\n",
+        "speed = distance_km/(time_mins/60)\n",
+        "  \n",
+        "print(f\"\\nDistance in miles: {distance_miles} and Time in minutes is {time_mins}\") \n",
+        "print(f\"\\nDistance in km: {distance_km}km \\nSpeed is {speed}km/hr\")\n"
+      ],
+      "metadata": {
+        "id": "1tPYWpKtBHLP"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "CSV FILE "
+      ],
+      "metadata": {
+        "id": "yrgARk-GBU-H"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import csv\n",
+        "\n",
+        "with open('data.csv', mode='w', newline='') as file:\n",
+        "  writer = csv.writer(file)\n",
+        "  writer.writerow(['Date', 'Distance (miles)', 'Time (mins)'])\n",
+        "  for item in data:\n",
+        "      writer.writerow([item[0], item[1], item[2]])\n",
+        "\n",
+        "print(\"Data has been written to data.csv file.\") "
+      ],
+      "metadata": {
+        "id": "GY7WwkM3AwU5"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# using pandas\n",
+        "\n",
+        "import pandas as pd\n",
+        "\n",
+        "df = pd.DataFrame(data, columns=[\"Date\", \"Distance (miles)\", \"Time (mins)\"])\n",
+        "df.to_csv(\"datapd.csv\", index=False)\n",
+        "\n",
+        "print(\"Data has been written to data.csv file.\")"
+      ],
+      "metadata": {
+        "id": "frcfoHoVBf6v"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "PAINT JOBS"
+      ],
+      "metadata": {
+        "id": "z1IX-i9mES6U"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# This program calculates the cost of a paint job based on user inputs\n",
+        "\n",
+        "# Define constants\n",
+        "GALLON_COVERAGE = 112 # square feet\n",
+        "LABOR_RATE = 35.00 # dollars per hour\n",
+        "\n",
+        "# Define function to calculate gallons of paint required\n",
+        "def calculate_paint(square_feet):\n",
+        "    gallons = square_feet / GALLON_COVERAGE\n",
+        "    return gallons\n",
+        "\n",
+        "# Define function to calculate labor hours required\n",
+        "def calculate_labor(square_feet):\n",
+        "    hours = square_feet / GALLON_COVERAGE * 8\n",
+        "    return hours\n",
+        "\n",
+        "# Define function to calculate cost of paint\n",
+        "def calculate_paint_cost(gallons, price_per_gallon):\n",
+        "    cost = gallons * price_per_gallon\n",
+        "    return cost\n",
+        "\n",
+        "# Define function to calculate labor charges\n",
+        "def calculate_labor_cost(hours):\n",
+        "    cost = hours * LABOR_RATE\n",
+        "    return cost\n",
+        "\n",
+        "# Define function to calculate total cost of paint job\n",
+        "def calculate_total_cost(paint_cost, labor_cost):\n",
+        "    total_cost = paint_cost + labor_cost\n",
+        "    return total_cost\n",
+        "\n",
+        "# Get user inputs\n",
+        "square_feet = float(input(\"Enter the square feet of wall space to be painted: \"))\n",
+        "price_per_gallon = float(input(\"Enter the price of paint per gallon: \"))\n",
+        "\n",
+        "# Validate inputs\n",
+        "if square_feet <= 0 or price_per_gallon <= 0:\n",
+        "    print(\"Error: inputs must be positive numbers\")\n",
+        "else:\n",
+        "    # Calculate results\n",
+        "    gallons = calculate_paint(square_feet)\n",
+        "    hours = calculate_labor(square_feet)\n",
+        "    paint_cost = calculate_paint_cost(gallons, price_per_gallon)\n",
+        "    labor_cost = calculate_labor_cost(hours)\n",
+        "    total_cost = calculate_total_cost(paint_cost, labor_cost)\n",
+        "\n",
+        "    # Print results\n",
+        "    print(f\"Gallons of paint required: {gallons:.2f}\")\n",
+        "    print(f\"Hours of labor required: {hours:.2f}\")\n",
+        "    print(f\"Cost of paint: ${paint_cost:.2f}\")\n",
+        "    print(f\"Labor charges: ${labor_cost:.2f}\")\n",
+        "    print(f\"Total cost of paint job: ${total_cost:.2f}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Kg1Y2XeGEWnE",
+        "outputId": "3bb420d9-e3cc-45fd-bc5a-ae32aac7a54d"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the square feet of wall space to be painted: 200\n",
+            "Enter the price of paint per gallon: 10\n",
+            "Gallons of paint required: 1.79\n",
+            "Hours of labor required: 14.29\n",
+            "Cost of paint: $17.86\n",
+            "Labor charges: $500.00\n",
+            "Total cost of paint job: $517.86\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "A painting company has determined that for every 112 square feet of wall space, one gallon of paint and eight hours of labor will be required. The company charges $35.00 per hour for labor. Write a program that asks the user to enter the square feet of wall space to be painted and the price of the paint per gallon. The program should display the following data:\n",
+        "\n",
+        "The number of gallons of paint required\n",
+        "The hours of labor required\n",
+        "The cost of the paint\n",
+        "The labor charges\n",
+        "The total cost of the paint job\n",
+        "Instructions\n",
+        "Following the six-steps problem solving methodology, Design and implement the solution following good programming practices, such as modularising code, validating inputs, handling errors properly, and adhering to the PEP8 style guide.\n",
+        "\n",
+        "Adhering to PEP8 standards:\n",
+        "\n",
+        "programming style naming conventions used in the PEP8, which include:\n",
+        "Meaningful names for project, variable, methods, and controls.\n",
+        "Correct capitalisation of variables and methods\n",
+        "Appropriate use of comments\n",
+        "Reference any relevant forums, websites, videos that you used.\n",
+        "Use of space and indentation to program is easy to read."
+      ],
+      "metadata": {
+        "id": "yLe7wJHeHaYj"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "gallon_area = 112\n",
+        "labour = 35\n",
+        "Squre_feet = float(input(\"Kindly enter the Area to be painted:-\"))\n",
+        "price_per_gallon = float(input(\"Kindly Eneter the Price Per galoon\"))\n",
+        "\n",
+        "total_paint = Squre_feet/gallon_area\n",
+        "gallon_price = total_paint*price_per_gallon \n",
+        "time = total_paint*8\n",
+        "labour_cost = time*labour\n",
+        "total_cost = gallon_price + labour_cost \n",
+        "\n",
+        "print(f\"\\n Total Gallons {total_paint:.2f} \\n Per Gallon price {gallon_price:.2f} \\n Total Time {time} Hours \\n Total Labour{labour_cost}\") \n",
+        "print(f\"\\n The Total Cost for Painting the Area of {Squre_feet} is {total_cost}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "j7TyyEizHbij",
+        "outputId": "8fdc7142-aedd-4dad-af3c-ca5e4e430c81"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Kindly enter the Area to be painted:-200\n",
+            "Kindly Eneter the Price Per galoon50\n",
+            "\n",
+            " Total Gallons 1.79 \n",
+            " Per Gallon price 89.28571428571429 \n",
+            " Total Time 14.285714285714286 Hours \n",
+            " Total Labour500.0\n",
+            "\n",
+            " The Total Cost for Painting the Area of 200.0 is 589.2857142857143\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
